@@ -1,0 +1,46 @@
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <%- include('./partials/header.ejs') %>
+
+    <div class="container">
+    <% for (let item of data) { %>
+        <div class="news-card">
+            
+        <% if (item['media:content'] && Array.isArray(item['media:content']) && item['media:content'].length > 0) { %>
+            <% const media = item['media:content'][0]; %>
+            <% if (media && media.$ && media.$.url) { %>
+                
+                <div class="image-wrapper">
+                    <a href="<%=item.link%>">
+                    <img class="news-image" src="<%= media.$.url %>" alt="<%= media['media:title'] ? media['media:title'][0] : 'Image' %>" />
+                    </a>
+                </div>
+                <% } %>
+        <% } %>
+        
+        <div class="card-text">
+            <% const date = new Date(item.pubDate); %>
+<p class="news-date"><%= date.toLocaleDateString('no-NO', { day: 'numeric', month: 'long', year: 'numeric' }) %> // kl. <%= date.toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' }) %></p>
+
+        <a href="<%=item.link%>">
+        <h3 class="news-title"><%= item.title %></h3>
+        </a>
+        <div class="news-description"><%= item.description %></div>
+        <div class="news-categories">
+        <% for (category in item.category){%>
+            <p class="news-category"><%=item.category[category]%></p>
+            <%} %>
+        </div>
+    </div>
+    </div>
+    
+        <% } %>
+    </div>
+
+    
+  </body>
+</html>
+
+<%- include('./partials/footer.ejs') %>

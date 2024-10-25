@@ -1,0 +1,180 @@
+body {
+  background: #0c0c0c;
+  color: #fafafa;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  background-color: #5bc57427;
+  border: 1px solid #5bc574c1;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  font-size: 1em;
+  margin: 10px;
+}
+
+li:hover {
+  color: #5bc57448;
+  background-color: #5bc574c1;
+}
+
+a {
+  display: inline-block;
+}
+
+.menu {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.navigation-bar {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.navigation-logo {
+  max-width: 300px;
+  margin: auto;
+  display: block;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #fafafa;
+}
+
+.header {
+  padding: 80px 20px 20px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.header-container {
+}
+
+.container {
+  max-width: 600px;
+}
+
+.news-card {
+  margin: 30px;
+  margin-bottom: 90px;
+  background-color: #121212;
+  border-radius: 10px;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+img {
+  width: 100%;
+}
+
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-decoration: none;
+}
+
+h1,
+ul,
+.news-date {
+  font-family: "Chakra Petch", sans-serif;
+  font-style: normal;
+}
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-weight: 200;
+}
+
+.news-card:hover {
+  background-color: #1c1c1c97;
+}
+
+.news-card img {
+  display: block;
+  transition: transform 0.4s; /* smoother zoom */
+  transform: scale(1.05);
+  transform-origin: 50% 50%;
+}
+.news-card:hover img {
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.4s; /* smoother zoom */
+}
+
+.card-text {
+  padding: 10px 30px 10px 30px;
+  color: #878787;
+}
+
+.news-date {
+  font-weight: 400;
+  font-size: 0.8em;
+  text-align: right;
+  color: #5bc574;
+}
+
+.news-description {
+  margin-bottom: 20px;
+}
+
+.news-categories {
+  display: inline;
+}
+
+.news-category {
+  font-size: 0.9em;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #fafafa53;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.news-category:hover {
+  background-color: #5bc574;
+  cursor: pointer;
+  color: #0c0c0c;
+}
+
+footer p {
+  margin-top: 40px;
+  text-align: center;
+}
