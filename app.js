@@ -12,7 +12,27 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
 app.get("/", (req, res) => {
-  res.render("home.ejs");
+  const rssUrl = "https://www.nrk.no/toppsaker.rss";
+
+  axios
+    .get(rssUrl)
+    .then((response) => {
+      // Parse the XML to JSON using xml2js
+      xml2js.parseString(response.data, { trim: true }, (err, result) => {
+        if (err) {
+          console.error("Error parsing RSS feed:", err);
+          res.status(500).send("Error retrieving feed");
+        } else {
+          // Access feed items in result.rss.channel[0].item
+          const data = result.rss.channel[0].item;
+          res.render("kultur.ejs", { data });
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching RSS feed:", error);
+      res.status(500).send("Error fetching feed");
+    });
 });
 
 app.get("/sport", (req, res) => {
