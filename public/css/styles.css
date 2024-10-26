@@ -12,22 +12,22 @@ ul {
 }
 
 li {
-  display: inline;
+  display: inline-block;
   background-color: #5bc57427;
   border: 1px solid #5bc574c1;
-  padding: 10px 20px 10px 20px;
   border-radius: 20px;
   font-size: 1em;
   margin: 10px;
 }
 
+li a {
+  padding: 10px 20px 10px 20px;
+  display: inline-block;
+}
+
 li:hover {
   color: #5bc57448;
   background-color: #5bc574c1;
-}
-
-a {
-  display: inline-block;
 }
 
 .menu {
